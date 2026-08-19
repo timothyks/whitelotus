@@ -1,0 +1,212 @@
+/* ===== Variables ===== */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #2e2e2e;
+  --color-muted: #4d4d4d;
+  --color-accent: #9e9354;
+  --color-surface: #f4f4f4;
+  --color-border: #dddddd;
+
+  --font-display: "Archivo Expanded", "Anybody", sans-serif;
+  --font-main: "Manrope", system-ui, sans-serif;
+  --max-width: 900px;
+  --space: 1rem;
+  --radius: 6px;
+  --logo-aspect: 15 / 6;
+}
+
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+a {
+  color: var(--color-accent);
+}
+
+/* ===== Header ===== */
+header {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: calc(var(--space) * 2) var(--space);
+  text-align: center;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("images/flower-pattern.jpg");
+  background-repeat: repeat;
+  filter: grayscale(1);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.full-logo {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: var(--logo-aspect);
+  object-fit: cover;
+  margin: 0 auto var(--space);
+}
+
+header nav {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Nav ===== */
+nav a {
+  display: inline-block;
+  margin: 0 0.5rem;
+  padding: 0.25rem 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.15s ease;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  transform: scale(1.08);
+}
+
+/* ===== Layout ===== */
+main {
+  flex: 1;
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space);
+}
+
+section {
+  padding: calc(var(--space) * 2) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+/* ===== Fade in on load ===== */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+section > * {
+  opacity: 0;
+  animation: fade-in 0.4s ease forwards;
+}
+
+section > *:nth-child(1) { animation-delay: 0.05s; }
+section > *:nth-child(2) { animation-delay: 0.1s; }
+section > *:nth-child(3) { animation-delay: 0.15s; }
+section > *:nth-child(4) { animation-delay: 0.2s; }
+section > *:nth-child(5) { animation-delay: 0.25s; }
+section > *:nth-child(6) { animation-delay: 0.3s; }
+
+.cards > .card {
+  opacity: 0;
+  animation: fade-in 0.4s ease forwards;
+}
+
+.cards > .card:nth-child(1) { animation-delay: 0.3s; }
+.cards > .card:nth-child(2) { animation-delay: 0.36s; }
+.cards > .card:nth-child(3) { animation-delay: 0.42s; }
+.cards > .card:nth-child(4) { animation-delay: 0.48s; }
+.cards > .card:nth-child(5) { animation-delay: 0.54s; }
+.cards > .card:nth-child(6) { animation-delay: 0.6s; }
+
+.about-logo {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 16 / 5;
+  object-fit: cover;
+  margin: 0 0 var(--space);
+}
+
+section h2 {
+  margin-top: 0;
+  color: var(--color-accent);
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+
+section h2:hover {
+  transform: scale(1.04);
+}
+
+/* ===== Team cards ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space);
+}
+
+.card {
+  /* override per-card with a style="--card-bg: #color;" attribute */
+  background: var(--card-bg, var(--color-surface));
+  border: 1px solid var(--card-border, var(--color-border));
+  border-radius: var(--radius);
+  padding: var(--space);
+  transition: transform 0.15s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card.has-icon {
+  display: flex;
+  align-items: center;
+  gap: var(--space);
+}
+
+.card-icon {
+  width: 86px;
+  height: 86px;
+  flex-shrink: 0;
+}
+
+.card h3 {
+  margin: 0 0 0.25rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  padding: var(--space);
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
