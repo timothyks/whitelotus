@@ -166,6 +166,10 @@ section h2:hover {
   gap: var(--space);
 }
 
+#events .cards {
+  grid-template-columns: 1fr;
+}
+
 .card {
   /* override per-card with a style="--card-bg: #color;" attribute */
   background: var(--card-bg, var(--color-surface));
@@ -186,8 +190,8 @@ section h2:hover {
 }
 
 .card-icon {
-  width: 86px;
-  height: 86px;
+  width: 100px;
+  height: 100px;
   flex-shrink: 0;
 }
 
