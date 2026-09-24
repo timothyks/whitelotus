@@ -139,6 +139,18 @@ section > *:nth-child(6) { animation-delay: 0.3s; }
 .cards > .card:nth-child(5) { animation-delay: 0.54s; }
 .cards > .card:nth-child(6) { animation-delay: 0.6s; }
 
+.sponsor-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: calc(var(--space) * 5) 0;
+}
+
+.invert {
+  filter: invert(1);
+}
+
 .about-logo {
   display: block;
   width: 100%;
@@ -166,7 +178,8 @@ section h2:hover {
   gap: var(--space);
 }
 
-#events .cards {
+#events .cards,
+#team .cards {
   grid-template-columns: 1fr;
 }
 
@@ -190,8 +203,9 @@ section h2:hover {
 }
 
 .card-icon {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
   flex-shrink: 0;
 }
 
@@ -203,6 +217,47 @@ section h2:hover {
   margin: 0;
   color: var(--color-muted);
   font-size: 0.9rem;
+}
+
+/* ===== Team member cards ===== */
+.team-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space);
+}
+
+.portrait {
+  display: block;
+  width: 120px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+
+.team-card .grade {
+  margin-bottom: 0.5rem;
+}
+
+.team-card p:last-child {
+  margin-top: 0.5rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tag {
+  /* override per-tag with a style="--tag-bg: #color;" attribute */
+  display: inline-block;
+  background: var(--tag-bg, var(--color-accent));
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
 }
 
 /* ===== Footer ===== */
