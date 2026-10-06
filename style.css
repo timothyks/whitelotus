@@ -219,6 +219,122 @@ section h2:hover {
   font-size: 0.9rem;
 }
 
+.past-event-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) max-content;
+  align-items: center;
+  gap: var(--space);
+}
+
+.past-event-card .card-body {
+  min-width: 0;
+}
+
+.result-panel {
+  display: grid;
+  gap: 0.55rem;
+  min-width: 170px;
+  width: 170px;
+  margin-left: auto;
+  padding-left: 0.5rem;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  align-content: center;
+  justify-self: end;
+}
+
+.score-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  align-items: end;
+  width: 100%;
+}
+
+.score-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  gap: 0.2rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.score-box,
+.standing-input {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.72);
+  text-align: center;
+  font-weight: 900;
+  font-family: var(--font-main);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.score-box {
+  width: 100%;
+  max-width: 4.5rem;
+  padding: 0.2rem 0.25rem;
+  font-size: 2.1rem;
+  line-height: 1.2;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.wins-box {
+  color: #0c8c3d;
+  text-shadow: 0 0 10px rgba(61, 196, 92, 0.75);
+  box-shadow: inset 0 0 10px rgba(61, 196, 92, 0.18), 0 0 12px rgba(61, 196, 92, 0.25);
+}
+
+.losses-box {
+  color: #cf2b2b;
+  text-shadow: 0 0 10px rgba(255, 95, 95, 0.75);
+  box-shadow: inset 0 0 10px rgba(255, 95, 95, 0.18), 0 0 12px rgba(255, 95, 95, 0.25);
+}
+
+.standing-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  width: 100%;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.standing-field span {
+  width: 100%;
+  text-align: center;
+}
+
+.standing-input {
+  width: 100%;
+  max-width: 7.2rem;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 0.45rem 0.55rem;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
 /* ===== Team member cards ===== */
 .team-card {
   display: flex;
