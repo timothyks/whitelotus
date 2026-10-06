@@ -202,6 +202,10 @@ section h2:hover {
   gap: var(--space);
 }
 
+.card.has-icon.past-event-card {
+  display: grid;
+}
+
 .card-icon {
   width: 150px;
   height: 150px;
@@ -221,7 +225,7 @@ section h2:hover {
 
 .past-event-card {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) max-content;
+  grid-template-columns: auto minmax(0, 1fr) minmax(150px, 180px);
   align-items: center;
   gap: var(--space);
 }
@@ -233,8 +237,9 @@ section h2:hover {
 .result-panel {
   display: grid;
   gap: 0.55rem;
-  min-width: 170px;
-  width: 170px;
+  min-width: 150px;
+  width: 100%;
+  max-width: 180px;
   margin-left: auto;
   padding-left: 0.5rem;
   border-left: 1px solid rgba(0, 0, 0, 0.08);
@@ -333,6 +338,34 @@ section h2:hover {
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 860px) {
+  .card.has-icon.past-event-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .past-event-card .card-body {
+    width: 100%;
+    text-align: center;
+  }
+
+  .result-panel {
+    width: 100%;
+    max-width: 240px;
+    margin: 0;
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: 0.75rem;
+    justify-self: center;
+  }
+
+  .score-row {
+    width: 100%;
+  }
 }
 
 /* ===== Team member cards ===== */
